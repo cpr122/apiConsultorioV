@@ -67,7 +67,7 @@ app.delete('/services/:id', (req, res) => {
   
   const query = 'DELETE FROM services WHERE id = ?';
   db.query(query, [serviceId], (err, results) => {
-    if (err) {
+    if (err){
       return res.status(500).json({ error: 'Error al eliminar el servicio' });
     }
     res.status(204).send(); // No content, eliminado correctamente
